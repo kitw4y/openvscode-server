@@ -23,7 +23,7 @@ import { canASAR } from '../../../../base/common/amd.js';
 import { CancellationError, isCancellationError } from '../../../../base/common/errors.js';
 import { PromiseResult } from '../../../../base/common/observable.js';
 
-const EDITOR_TREESITTER_TELEMETRY = 'editor.experimental.treeSitterTelemetry';
+// const EDITOR_TREESITTER_TELEMETRY = 'editor.experimental.treeSitterTelemetry';
 const MODULE_LOCATION_SUBPATH = `@vscode/tree-sitter-wasm/wasm`;
 const FILENAME_TREESITTER_WASM = `tree-sitter.wasm`;
 
@@ -396,7 +396,8 @@ export class TreeSitterTextModelService extends Disposable implements ITreeSitte
 		if (setting && setting.length > 0) {
 			return setting;
 		} else {
-			const expSetting = this._configurationService.getValue<boolean>(EDITOR_TREESITTER_TELEMETRY);
+			// const expSetting = this._configurationService.getValue<boolean>(EDITOR_TREESITTER_TELEMETRY);
+			const expSetting = false;
 			if (expSetting) {
 				return ['typescript'];
 			}
